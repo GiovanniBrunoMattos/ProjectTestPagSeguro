@@ -36,26 +36,26 @@ public class ServiceController {
     }
 
 
-    @GetMapping(value = QUERY_BY_ACCOUNT_NUMBER)
+    @GetMapping(value = FIND_BY_ALL)
     public List<AccountResponseDTO> findAll() {
         return accountService.findAll();
     }
 
 
-    @GetMapping("/v1/findAccountNumber/{id}")
+    @GetMapping(value = QUERY_BY_ACCOUNT_NUMBER)
     public AccountResponseDTO findByAccountNumber(@PathVariable("id") String id) {
         return accountService.findByAccountNumber(id);
     }
 
 
-    @DeleteMapping("/v1/deleteAccount/{id}")
+    @DeleteMapping(value = DELETE_BY_ACCOUNT_NUMBER)
     public ResponseEntity<String> deleteAccount(@PathVariable("id") String id) {
         accountService.deleteAccount(id);
         return new ResponseEntity<>(id, HttpStatus.NO_CONTENT);
 
     }
 
-    @PutMapping("/v1/updateAccount/{id}")
+    @PutMapping(value = UPDATE_BY_ACCOUNT_NUMBER)
     public void updateAccount(@PathVariable("id") String id, @RequestBody AccountRequestDTO createAccountRequestDTO) {
         accountService.updateAccount(id, createAccountRequestDTO);
 
