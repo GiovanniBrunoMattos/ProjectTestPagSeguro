@@ -19,9 +19,6 @@ public class AbstractMVCController {
     @Autowired
     protected WebApplicationContext context;
 
-    @MockBean
-    protected AccountService mockAccountService;
-
     @Autowired
     protected ObjectMapper objectMapper;
 

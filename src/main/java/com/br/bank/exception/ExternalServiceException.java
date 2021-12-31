@@ -4,7 +4,6 @@ import lombok.Generated;
 
 import java.beans.ConstructorProperties;
 import java.net.URI;
-import java.sql.Struct;
 import java.util.Objects;
 
 public class ExternalServiceException extends RuntimeException {
